@@ -1,7 +1,7 @@
 body {
   margin: 0;
   height: 100vh;
-  background-image: linear-gradient(#fff, #B46ED6);
+  background-image: linear-gradient(#fff, #b46ed6);
 }
 
 main {
@@ -19,7 +19,8 @@ main {
   height: 10rem;
   margin: 0;
   border-radius: 3rem;
-  box-shadow: 15px 15px 15px 0px #0a63a92e,
+  box-shadow:
+    15px 15px 15px 0 #0a63a92e,
     -15px -15px 15px -10px #7e3bfa26;
   margin-top: 4rem;
 
@@ -28,12 +29,13 @@ main {
     height: 3rem;
     font-size: 1rem;
     border: none;
-    padding: .25rem 1rem;
+    padding: 0.25rem 1rem;
     border-radius: 1rem;
     color: #fff;
-    background-color: #B46ED6;
-    box-shadow: 10px 10px 15px 0px #0a63a92e, 
-    -15px -15px 15px -10px #7e3bfa26;
+    background-color: #b46ed6;
+    box-shadow:
+      10px 10px 15px 0 #0a63a92e,
+      -15px -15px 15px -10px #7e3bfa26;
   }
 
   input:focus-visible {
