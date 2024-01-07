@@ -4,8 +4,9 @@ body {
   /* height: 100vh; */
   min-height: 100vh;
   font-family: 'Lato', sans-serif;
-  background-image: linear-gradient(#edc8ff, #b46ed6);
-
+/*   background-image: linear-gradient(#edc8ff, #b46ed6); */
+background-color: #edc8ff;
+  
   .analyticsBtn {
     width: 7rem;
     height: 3rem;
