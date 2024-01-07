@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const analyticsTerms = document.querySelector('.uList');
 
-  fetch('http://127.0.0.1:3000/most_searched_terms')
+  fetch('https://still-savannah-41464-80046a64bd89.herokuapp.com/query_histories/')
     .then(response => response.json())
     .then(data => {
 
@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
         listItem.className = 'w-100 d-flex justify-content-around align-items-center text-center';
 
         const termName = document.createElement('h3');
-        termName.textContent = term.term;
+        termName.textContent = term.query;
 
         const termCounter = document.createElement('h3');
-        termCounter.textContent = term.searched_counter;
+        termCounter.textContent = term.count;
 
         const termTime = document.createElement('h3');
         termTime.textContent = 'since: ' + formatDate(term.created_at);

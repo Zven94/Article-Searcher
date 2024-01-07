@@ -5,7 +5,7 @@ body {
   font-family: 'Lato', sans-serif;
   background-image: linear-gradient(#edc8ff, #b46ed6);
 
-  
+
   .analyticsBtn {
     width: 7rem;
     height: 3rem;
@@ -93,7 +93,8 @@ main {
   background-color: #b46ed6;
 }
 
-.nextR:active, .previousR:active {
+.nextR:active,
+.previousR:active {
   width: 9.75rem;
   height: 2.75rem;
   background-color: #9927d3;
@@ -106,4 +107,12 @@ h3 {
   justify-content: start;
   align-items: center;
   text-align: start;
+}
+
+.analyticsDiv {
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow:
+    10px 10px 15px 0 #0a63a92e,
+    -15px -15px 15px -10px #7e3bfa26;
 }

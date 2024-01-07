@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.querySelector('.searchInput').value.trim();
 
     // build my url to use the search API
-    let url = 'https://article-searcher.onrender.com/search?q=' + encodeURIComponent(searchInput) + `&start_index=${start_index}`;
+    let url = 'https://still-savannah-41464-80046a64bd89.herokuapp.com/search?q=' + encodeURIComponent(searchInput) + `&start_index=${start_index}`;
     console.log(url);
     // make the request to the API
     fetch(url)
