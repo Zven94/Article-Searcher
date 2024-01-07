@@ -1,10 +1,10 @@
 body {
   margin: 0;
+
   /* height: 100vh; */
   min-height: 100vh;
   font-family: 'Lato', sans-serif;
   background-image: linear-gradient(#edc8ff, #b46ed6);
-
 
   .analyticsBtn {
     width: 7rem;
@@ -17,6 +17,10 @@ body {
     box-shadow:
       15px 15px 15px 0 #0a63a92e,
       -15px -15px 15px -10px #ffffff38;
+  }
+
+  .searcherDiv {
+    margin: 7rem 0;
   }
 }
 
@@ -34,7 +38,6 @@ main {
     list-style: none;
   }
 }
-
 
 .searcher {
   width: 30%;

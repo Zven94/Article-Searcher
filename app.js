@@ -1,74 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-
+document.addEventListener('DOMContentLoaded', () => {
   const searchForm = document.querySelector('.searchForm');
   const previousButton = document.querySelector('.previousR');
   const nextButton = document.querySelector('.nextR');
 
   // index to controll showing results
-  let start_index = 1;
+  let startIndex = 1;
 
   // create variable for the setTimeOut counter to avoid multiple calls to the API
   let debounceTimer;
 
-  searchForm.addEventListener('input', function (e) {
-    e.preventDefault();
-
-    // clear the timer when function is called
-    clearTimeout(debounceTimer);
-
-    // set a timer to call the API after 1 second
-    debounceTimer = setTimeout(function () {
-      updateSearch(start_index)
-    }, 1000);
-  });
-
-  // manage previuos resutls
-  previousButton.addEventListener('click', function (e) {
-    if (start_index > 1) {
-      updateSearch(start_index - 10)
-    }
-  });
-
-  nextButton.addEventListener('click', function (e) {
-    updateSearch(start_index + 10)
-  });
-
-
-  // update index and fetch data
-
-  function updateSearch(newIndex) {
-    start_index = newIndex;
-
-    const searchInput = document.querySelector('.searchInput').value.trim();
-
-    // build my url to use the search API
-    let url = 'https://still-savannah-41464-80046a64bd89.herokuapp.com/search?q=' + encodeURIComponent(searchInput) + `&start_index=${start_index}`;
-    console.log(url);
-    // make the request to the API
-    fetch(url)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        // do something with the data
-        console.log(data);
-        displayResults(data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-    // searchInput.value = '';
-  }
-
   function displayResults(results) {
-    let showResults = document.querySelector('.showResults');
+    const showResults = document.querySelector('.showResults');
 
     // clean up the results from previus search
     showResults.innerHTML = '';
 
     // loop over the results
-    results.forEach(result => {
+    results.forEach((result) => {
       const article = document.createElement('li');
 
       const title = document.createElement('h3');
@@ -85,6 +33,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
       showResults.appendChild(article);
     });
-
   }
+
+  // update index and fetch data
+
+  function updateSearch(newIndex) {
+    startIndex = newIndex;
+
+    const searchInput = document.querySelector('.searchInput').value.trim();
+
+    // build my url to use the search API
+    const url = `https://still-savannah-41464-80046a64bd89.herokuapp.com/search?q=${encodeURIComponent(searchInput)}&startIndex=${startIndex}`;
+    // console.log(url);
+    // make the request to the API
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        // do something with the data
+        // console.log(data);
+        displayResults(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // searchInput.value = '';
+  }
+
+  // manage previuos resutls
+  previousButton.addEventListener('click', () => {
+    if (startIndex > 1) {
+      updateSearch(startIndex - 10);
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    updateSearch(startIndex + 10);
+  });
+
+  searchForm.addEventListener('input', (e) => {
+    e.preventDefault();
+
+    // clear the timer when function is called
+    clearTimeout(debounceTimer);
+
+    // set a timer to call the API after 1 second
+    debounceTimer = setTimeout(() => {
+      updateSearch(startIndex);
+    }, 1000);
+  });
 });
