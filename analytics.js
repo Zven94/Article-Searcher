@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
         termCounter.textContent = term.count;
 
         const termTime = document.createElement('h3');
-        termTime.textContent = 'since: ' + formatDate(term.created_at);
+        termTime.textContent = 'Since: ' + formatDate(term.created_at);
 
         const termLastTime = document.createElement('h3');
-        termLastTime.textContent = 'last time: ' + formatDate(term.updated_at);
+        termLastTime.textContent = 'Last Time: ' + formatDate(term.updated_at);
 
         listItem.appendChild(termName);
         listItem.appendChild(termCounter);

@@ -35,6 +35,7 @@ main {
   }
 }
 
+
 .searcher {
   width: 30%;
   height: 10rem;
@@ -101,7 +102,7 @@ main {
 }
 
 h3 {
-  width: 10rem;
+  width: 13rem;
   font-size: 1.5rem;
   display: flex;
   justify-content: start;
