@@ -4,6 +4,20 @@ body {
   min-height: 100vh;
   font-family: 'Lato', sans-serif;
   background-image: linear-gradient(#edc8ff, #b46ed6);
+
+  
+  .analyticsBtn {
+    width: 7rem;
+    height: 3rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: transparent;
+    font-weight: 600;
+    color: #b46ed6;
+    box-shadow:
+      15px 15px 15px 0 #0a63a92e,
+      -15px -15px 15px -10px #ffffff38;
+  }
 }
 
 main {
@@ -85,4 +99,11 @@ main {
   background-color: #9927d3;
 }
 
-/* #0a63a94d */
+h3 {
+  width: 10rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: start;
+}
